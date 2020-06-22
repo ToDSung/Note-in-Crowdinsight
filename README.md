@@ -1,32 +1,50 @@
-# note
+# wsl 開發環境
 
-### 計算程式碼執行時間的裝飾器寫法
+參考關鍵字 
+我的 Windows Subsystem for Linux (WSL) 終極開發人員配置  
 
-```python
+windows terminal
 
-from functools import wraps
- 
-def fn_timer(function):
- 
-    @wraps(function)
-    def function_timer(*args, **kwargs):
-        import time
-        t0 = time.time()
-        result = function(*args, **kwargs)
-        t1 = time.time()
-        print('%s costs %s (s)' %(function.func_name, t1 - t0))
-        return result
-    return function_timer
- 
- 
-@fn_timer
-def get_alpha_str1(s):
-    result = ''.join([x for x in s if x.isalpha()])
-    return result
+zsh
 
-#作者：风中静行 
-#来源：CSDN 
-#原文：https://blog.csdn.net/sxb0841901116/article/details/78508841 
-#版权声明：本文为博主原创文章，转载请附上博文链接！
+https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+
+```shell=
+sudo apt install zsh
+zsh --version
+```
+
+oh my zsh
+
+https://github.com/ohmyzsh/ohmyzsh
+
+```shell=
+# 有一個命令列 我選0
+sh -c "$(curl -fsSL 
+https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 
 ```
+plugins=(
+    git
+    git-open
+    zsh-autosuggestions
+    z
+)
+
+ZSH_THEME="agnoster"
+"fontFace": "Cascadia Mono PL"
+字體
+https://github.com/microsoft/cascadia-code/releases
+```
+
+wsl 用 設定裡的應用程式裝
+1. 安裝python 
+    https://docs.microsoft.com/zh-tw/windows/python/web-frameworks
+2. alias python=python3 pip=pip3 
+3. 安裝 node 
+    https://docs.microsoft.com/zh-tw/windows/nodejs/setup-on-wsl2
+4. 安裝完 windows docker 後 
+ https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly#ensure-volume-mounts-work
+ 
+ wsl2
