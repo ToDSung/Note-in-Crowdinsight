@@ -1,3 +1,6 @@
 # ToD Note
 
-將所有平常不常用或不懂的東西寫成筆記記錄在此
+I record some note when I was an intern in crowdinsight during 2018/01 to 2018/07
+
+todo: 
+should integrate other note
